@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function requestGetProducts(keyword, pageNumber) {
   return axios.get(
-    `${process.env.API_URL}/api/products?keyword=${keyword || ""}&pageNumber=${
+    `${process.env.REACT_APP_API_URL}/api/products?keyword=${keyword || ""}&pageNumber=${
       pageNumber || ""
     }`
   );
@@ -26,7 +26,7 @@ export function productReviewCreateRequest(payload, userInfo) {
 }
 
 export function getTopProductsRequest() {
-  return axios.get(`${process.env.API_URL}/api/products/top`);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/products/top`);
 }
 
 export function requestProductDelete(payload, userInfo) {
