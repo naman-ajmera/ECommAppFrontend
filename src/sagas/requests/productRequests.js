@@ -9,7 +9,7 @@ export function requestGetProducts(keyword, pageNumber) {
 }
 
 export function requestGetProductDetails(payload) {
-  return axios.get(`${process.env.API_URL}/api/products/${payload.id}`);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/products/${payload.id}`);
 }
 
 export function productReviewCreateRequest(payload, userInfo) {
