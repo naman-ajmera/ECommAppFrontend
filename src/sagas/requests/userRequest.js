@@ -7,7 +7,7 @@ export function requestLogin(payload) {
     },
   };
   return axios.post(
-    `${process.env.API_URL}/api/users/login`,
+    `${process.env.REACT_APP_API_URL}/api/users/login`,
     {
       email: payload.email,
       password: payload.password,
@@ -23,7 +23,7 @@ export function requestRegister(payload) {
     },
   };
   return axios.post(
-    `${process.env.API_URL}/api/users`,
+    `${process.env.REACT_APP_API_URL}/api/users`,
     {
       email: payload.email,
       name: payload.name,
@@ -39,7 +39,7 @@ export function requestUserDetails(payload, userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.get(`${process.env.API_URL}/api/users/${payload.id}`, config);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/users/${payload.id}`, config);
 }
 
 export function requestUpdateUserDetails(payload, userInfo) {
@@ -50,7 +50,7 @@ export function requestUpdateUserDetails(payload, userInfo) {
     },
   };
   return axios.put(
-    `${process.env.API_URL}/api/users/profile`,
+    `${process.env.REACT_APP_API_URL}/api/users/profile`,
     {
       id: payload.id,
       email: payload.email,
@@ -67,7 +67,7 @@ export function requestUserList(userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.get(`${process.env.API_URL}/api/users`, config);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/users`, config);
 }
 
 export function requestUserDelete(payload, userInfo) {
@@ -76,7 +76,7 @@ export function requestUserDelete(payload, userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.delete(`${process.env.API_URL}/api/users/${payload.id}`, config);
+  return axios.delete(`${process.env.REACT_APP_API_URL}/api/users/${payload.id}`, config);
 }
 
 export function userUpdateRequest(payload, userInfo) {
@@ -87,7 +87,7 @@ export function userUpdateRequest(payload, userInfo) {
     },
   };
   return axios.put(
-    `${process.env.API_URL}/api/users/${payload.id}`,
+    `${process.env.REACT_APP_API_URL}/api/users/${payload.id}`,
     {
       name: payload.name,
       email: payload.email,
