@@ -8,7 +8,7 @@ export function createOrderRequest(payload, userInfo) {
     },
   };
   return axios.post(
-    `${process.env.API_URL}/api/orders`,
+    `${process.env.REACT_APP_API_URL}/api/orders`,
     {
       orderItems: payload.orderItems,
       shippingAddress: payload.shippingAddress,
@@ -29,7 +29,7 @@ export function getOrderDetailsRequest(payload, userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.get(`${process.env.API_URL}/api/orders/${payload.id}`, config);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/orders/${payload.id}`, config);
 }
 
 export function payOrderRequest(payload, userInfo) {
@@ -40,7 +40,7 @@ export function payOrderRequest(payload, userInfo) {
     },
   };
   return axios.put(
-    `${process.env.API_URL}/api/orders/${payload.id}/pay`,
+    `${process.env.REACT_APP_API_URL}/api/orders/${payload.id}/pay`,
     {
       id: payload.paymentResult.id,
       status: payload.paymentResult.status,
@@ -58,7 +58,7 @@ export function deliverOrderRequest(payload, userInfo) {
     },
   };
   return axios.put(
-    `${process.env.API_URL}/api/orders/${payload.id}/deliver`,
+    `${process.env.REACT_APP_API_URL}/api/orders/${payload.id}/deliver`,
     {},
     config
   );
@@ -70,7 +70,7 @@ export function orderListRequest(userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.get(`${process.env.API_URL}/api/orders/myorders`, config);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/orders/myorders`, config);
 }
 
 export function orderAllListRequest(userInfo) {
@@ -79,5 +79,5 @@ export function orderAllListRequest(userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.get(`${process.env.API_URL}/api/orders`, config);
+  return axios.get(`${process.env.REACT_APP_API_URL}/api/orders`, config);
 }
