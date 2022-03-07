@@ -19,7 +19,7 @@ export function productReviewCreateRequest(payload, userInfo) {
     },
   };
   return axios.post(
-    `${process.env.API_URL}/api/products/${payload.id}/reviews`,
+    `${process.env.REACT_APP_API_URL}/api/products/${payload.id}/reviews`,
     { rating: payload.rating, comment: payload.comment },
     config
   );
@@ -36,7 +36,7 @@ export function requestProductDelete(payload, userInfo) {
     },
   };
   return axios.delete(
-    `${process.env.API_URL}/api/products/${payload.id}`,
+    `${process.env.REACT_APP_API_URL}/api/products/${payload.id}`,
     config
   );
 }
@@ -47,7 +47,7 @@ export function requestProductCreate(payload, userInfo) {
       Authorization: `Bearer ${userInfo.token}`,
     },
   };
-  return axios.post(`${process.env.API_URL}/api/products/`, {}, config);
+  return axios.post(`${process.env.REACT_APP_API_URL}/api/products/`, {}, config);
 }
 
 export function requestProductUpdate(payload, userInfo) {
@@ -58,7 +58,7 @@ export function requestProductUpdate(payload, userInfo) {
     },
   };
   return axios.put(
-    `${process.env.API_URL}/api/products/${payload.id}`,
+    `${process.env.REACT_APP_API_URL}/api/products/${payload.id}`,
     {
       name: payload.name,
       price: payload.price,
